@@ -1,3 +1,5 @@
+Uses math;
+
 type point2D = record
 	x : integer;
 	y : integer;
@@ -37,7 +39,7 @@ function  vec_angle(a,b : vec2D) : real;
 var tmp : real;
 begin
     tmp  := scal_product(a,b) / ( len_vec2D(a) *  len_vec2D(b));
-    vec_angle:=arctan(sqrt(1-sqr(cos(tmp)))/cos(tmp));
+    vec_angle:=arccos(tmp);
 end;
 
 function  line_angle(l1,l2 : line2D) : real;
